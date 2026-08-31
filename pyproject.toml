@@ -1,0 +1,11 @@
+[project]
+name = "btc-timeseries-ml"
+version = "0.1.0"
+description = "Bitcoin timeseries machine learning."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
