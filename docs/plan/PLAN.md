@@ -18,6 +18,8 @@ based on prior analysis.
 - Step 9: Execute a live run of the model to determine real world accuracy. 
 - Step 10: Create detailed READ.me and publish to github, discord channels, and 
 LinkedIn for project showcase. 
+- Step 11: Deploy and package model for public download. 
+
 
 ## Output: 
 - A time series model trained to forecast Bitcoin price data. 
