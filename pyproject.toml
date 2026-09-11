@@ -12,7 +12,8 @@ dependencies = [
     "statsmodels",
     "scikit-learn",
     "jupyterlab",
-    "statsmodels"
+    "statsmodels", 
+    "joblib"
     
 ]
 

@@ -12,6 +12,7 @@ Requires-Dist: statsmodels
 Requires-Dist: scikit-learn
 Requires-Dist: jupyterlab
 Requires-Dist: statsmodels
+Requires-Dist: joblib
 
 DRAFT_1
 
