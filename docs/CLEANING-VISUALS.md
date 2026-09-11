@@ -17,7 +17,8 @@
 ## DO NOT: 
 - Don't generate any more code than is required. 
 - Don't execute steps that precede step three in the PLAN.md
-- Don't generate code that allows user to test the model. 
+- Don't generate code that allows user to train and test the model. 
+- Don't provide reccomendations for model selection. 
 
 ## Output: 
 - An optimally cleaned data set time series visualization that aids the model selection process.

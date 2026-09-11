@@ -1,0 +1,103 @@
+Metadata-Version: 2.4
+Name: btc-timeseries-ml
+Version: 0.1.0
+Summary: Bitcoin timeseries machine learning.
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: statsmodels
+Requires-Dist: scikit-learn
+Requires-Dist: jupyterlab
+Requires-Dist: statsmodels
+
+DRAFT_1
+
+# Project Title
+
+Bitcoin Time Series Forecasting Model
+w
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Description 
+This project is a full training, testing, and deployment pipeline for a time series
+model used to forecast Bitcoing pricing data. It is model trained on historical 
+bitcoin price data. Pipeline is open for public use. Model is open for free download 
+to use in any investment analysis related to Bitcoin.
+
+An ARIMA model was chosen for forecasting pricing data due to the lack of seasonallity
+and erractice local price changes. Executed on past price data and back tested 
+on past data to determine the in prediction. 
+
+## Installation
+
+- Step 1:
+- Step 2:
+- Step 3:
+- Step 4:
+- Step 5:
+
+## Usage: 
+
+- INSERT later after development and deployment. 
+
+## Contributing
+
+To contribute to this project, please follow these meta steps:
+
+1. **Fork the Repository**: Click the "Fork" button at the top right of this repository to create your own copy.
+2. **Clone Your Fork**: Clone your forked repository to your local machine using `git clone`.
+3. **Create a Branch**: Create a new branch for your feature or bugfix (`git checkout -b feature-name`).
+4. **Make Changes**: Implement your changes following good coding standards and provide clear commit messages.
+5. **Pull Latest Changes**: Regularly sync your branch with the upstream repository to avoid merge conflicts.
+6. **Test Changes**: Ensure your modifications do not break existing functionality by running available tests or adding new ones as needed.
+7. **Submit a Pull Request**: Push your branch to your fork and open a pull request with a clear description of the changes and their purpose.
+8. **Participate in Code Review**: Be responsive to feedback, make necessary changes, and discuss improvements.
+
+We welcome all contributions including code, documentation, tests, and suggestions to improve the project!
+
+
+## Liability Statement:
+-- Insert Investment Decision statement later.   
+Developers are not liable for any investment desicions for this model.  
+
+## License
+
+MIT License
+
+Copyright (c) 2024 [Your Name or Organization]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
+## Contact
+
+- Name: George Stimson 
+- Email: cstim.murdoch@gmail.com
+- [www.linkedin.com/in/george-stimson-248446252](LinkedIn)

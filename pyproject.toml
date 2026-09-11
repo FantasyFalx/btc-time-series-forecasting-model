@@ -11,7 +11,9 @@ dependencies = [
     "seaborn",
     "statsmodels",
     "scikit-learn",
-    "jupyterlab"
+    "jupyterlab",
+    "statsmodels"
+    
 ]
 
 [tool.pytest.ini_options]

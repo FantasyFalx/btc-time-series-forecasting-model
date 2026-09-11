@@ -1,0 +1,17 @@
+**Yes, it will make a solid portfolio piece**, provided you frame it properly in your repository's Readme.
+
+In tech portfolios, recruiters and hiring managers aren't looking for a "perfect" price prediction—everyone knows predicting asset prices with classical time series models is notoriously difficult. What they care about is **how you explain your technical choices and document your engineering process**.
+
+**What Makes It a Good Portfolio Piece**
+
+* **Clear Problem & Baseline:** Setting up a classic statistical model (ARIMA) as a performance baseline demonstrates a solid understanding of fundamental time series concepts before jumping to complex machine learning architectures like LSTMs or Transformers.
+* **Justified Model Choice:** Explaining *why* you chose ARIMA over SARIMA (identifying lack of seasonality) or Exponential Smoothing shows you can interpret data visually and theoretically, rather than blindly training algorithms.
+* **Clean Workflow:** Showing end-to-end steps—from data processing and visualization to evaluation metrics (MAE, RMSE, MAPE)—reflects a structured analytics workflow.
+
+**How to Make It Stand Out on GitHub**
+
+To maximize its impact without adding heavy scope, focus on presentation:
+
+* **Structure the Readme:** Lead with a quick summary, your key visualization, the justification for choosing ARIMA, and the final error metrics.
+* **Document the Limitations:** Add a short "Key Takeaways" or "Limitations" section. Briefly mentioning that linear models struggle with extreme crypto volatility shows strong domain awareness.
+* **Include Code Hygiene:** Keep your code modular, well-commented, and provide a clear `requirements.txt` so anyone can easily replicate your results.
