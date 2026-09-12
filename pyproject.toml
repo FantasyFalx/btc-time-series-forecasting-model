@@ -5,6 +5,16 @@ description = "Bitcoin timeseries machine learning."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "statsmodels",
+    "scikit-learn",
+    "jupyterlab",
+    "statsmodels", 
+    "joblib"
+    
 ]
 
 [tool.pytest.ini_options]
