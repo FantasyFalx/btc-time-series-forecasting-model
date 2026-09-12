@@ -10,6 +10,7 @@ This project is for research and education. It is **not** investment advice. Dev
 - [Data](#data)
 - [Model Selection](#model-selection)
 - [Training and Validation Findings](#training-and-validation-findings)
+- [Production Model](#production-model)
 - [Visuals](#visuals)
 - [Environment Setup](#environment-setup)
 - [Usage](#usage)
@@ -116,6 +117,24 @@ After validation, the same `(p, d, q)` is refit on the full 365-day window. A 5-
 
 The fitted full-series model is serialized to `prod_model/arima_btc.joblib`.
 
+## Production Model
+
+The trained estimator ships in this repository so you can download and load it without retraining:
+
+```text
+prod_model/
+└── arima_btc.joblib    Full-series ARIMA(1, 0, 1), serialized with joblib
+```
+
+| Item | Value |
+| --- | --- |
+| Path | [`prod_model/arima_btc.joblib`](prod_model/arima_btc.joblib) |
+| Format | joblib dump of a statsmodels ARIMA results object |
+| Order | `(1, 0, 1)` on first-differenced daily close, then refit on the full 365-day window |
+| Loader | `src/main.py` |
+
+After cloning, load it with `python src/main.py` or `joblib.load("prod_model/arima_btc.joblib")`. Re-running `pipeline/model_training.ipynb` overwrites this file.
+
 ## Visuals
 
 ### Exploration — last year of daily closes
@@ -189,7 +208,7 @@ Run all cells. The notebook cleans the series, plots exploration and ACF/PACF ch
 
 ## Usage
 
-Load the serialized model after the notebook has been run:
+The serialized model is already in `prod_model/`. After installing dependencies:
 
 ```bash
 python src/main.py
