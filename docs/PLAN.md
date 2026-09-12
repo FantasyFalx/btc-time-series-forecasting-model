@@ -21,15 +21,15 @@
 4. Train the selected model—SARIMA, ARIMA, or exponential smoothing—based on exploratory analysis. (Done)
 5. Validate the model with historical backtesting to assess loss function performance. (Done)
 6. Iterate training and validation (steps 4 and 5) until the desired losls threshold is achieved. (Done)
-7. Package and deploy the finalized model to a cloud environment.(IP) 
+7. Deploy the finalized model. .(IP) 
     7.1: Ask ai what packages could be used to serialize the ml model. (IP)
         - Selected job lib packaging. 
     7.2: Use package to seriazlize the model. (Done)
         - Create a prompt md file that directs agent to serialize the model 
         and prep it for deployment. (Done) 
     7.3: Run a test forecast of the serialized model. (Done) 
-    7.4: Deploy the model. (IP)
-8. Run the model on live data to evaluate real-world accuracy.
+    7.4: Deploy the model. ()
+## Remove this item. 
 9. Create comprehensive documentation (README), and publish the project to GitHub, Discord channels, and LinkedIn for public showcasing.
 10. Prepare and distribute the model for public download.
 
