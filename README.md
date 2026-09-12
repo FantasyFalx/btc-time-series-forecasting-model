@@ -37,12 +37,12 @@ The intended use is **1–5 day** ahead forecasts. Confidence intervals widen qu
 | --- | --- |
 | Asset | Bitcoin (BTC) close price in USD |
 | Granularity | Daily |
-| File | `data/btc-time-series-data.csv` |
+| File | `data/btc-time-series-data.csv` (local; `data/` is gitignored) |
 | Columns | `event_date`, `close_price_usd`, `market_cap_usd`, `volume_usd` |
 | Full history | 4,885 daily rows, 2013-04-28 through 2026-09-10 |
 | Modeling window | Last 365 days (`2025-09-11` → `2026-09-10`) |
 
-Market cap and volume are dropped before modeling. The series has one missing close price; that gap is filled with time interpolation after the daily frequency is set. Training uses only `close_price_usd`.
+The daily CSV is not in this repository. Create a local `data/` directory and place `btc-time-series-data.csv` there before you train. Market cap and volume are dropped before modeling. The series has one missing close price; that gap is filled with time interpolation after the daily frequency is set. Training uses only `close_price_usd`.
 
 Daily data was chosen over minute, hourly, weekly, monthly, and yearly series so the starter model could target short-term forecasts without the noise of intra-day ticks or the sparsity of coarser calendars.
 
@@ -115,25 +115,25 @@ After validation, the same `(p, d, q)` is refit on the full 365-day window. A 5-
 | 2026-09-14 | 69,129 | 84,021 |
 | 2026-09-15 | 68,276 | 84,921 |
 
-The fitted full-series model is serialized to `prod_model/arima_btc.joblib`.
+The fitted full-series model is serialized to `models/arima_btc.joblib`.
 
 ## Production Model
 
-The trained estimator ships in this repository so you can download and load it without retraining:
+The trained estimator lives in a local `models/` directory (gitignored, same as `data/`):
 
 ```text
-prod_model/
+models/
 └── arima_btc.joblib    Full-series ARIMA(1, 0, 1), serialized with joblib
 ```
 
 | Item | Value |
 | --- | --- |
-| Path | [`prod_model/arima_btc.joblib`](prod_model/arima_btc.joblib) |
+| Path | `models/arima_btc.joblib` |
 | Format | joblib dump of a statsmodels ARIMA results object |
 | Order | `(1, 0, 1)` on first-differenced daily close, then refit on the full 365-day window |
 | Loader | `src/main.py` |
 
-After cloning, load it with `python src/main.py` or `joblib.load("prod_model/arima_btc.joblib")`. Re-running `pipeline/model_training.ipynb` overwrites this file.
+Train with `pipeline/model_training.ipynb` to write this file, then load it with `python src/main.py` or `joblib.load("models/arima_btc.joblib")`. Re-running the notebook overwrites it.
 
 ## Visuals
 
@@ -190,7 +190,7 @@ pip install -e .
 
 ### 3. Provide the daily price CSV
 
-Place the historical file at:
+`data/` is gitignored. Create it locally and add the historical file:
 
 ```text
 data/btc-time-series-data.csv
@@ -204,11 +204,11 @@ It must include `event_date` and `close_price_usd`. `market_cap_usd` and `volume
 jupyter lab pipeline/model_training.ipynb
 ```
 
-Run all cells. The notebook cleans the series, plots exploration and ACF/PACF charts, fits ARIMA, scores the 5-day backtest, refits on the full window, and writes `prod_model/arima_btc.joblib`.
+Run all cells. The notebook cleans the series, plots exploration and ACF/PACF charts, fits ARIMA, scores the 5-day backtest, refits on the full window, and writes `models/arima_btc.joblib` (that directory is also gitignored).
 
 ## Usage
 
-The serialized model is already in `prod_model/`. After installing dependencies:
+After you have trained and produced `models/arima_btc.joblib`:
 
 ```bash
 python src/main.py
@@ -220,7 +220,7 @@ That script prints the estimator type and ARIMA order. In your own code:
 from pathlib import Path
 import joblib
 
-model = joblib.load(Path("prod_model") / "arima_btc.joblib")
+model = joblib.load(Path("models") / "arima_btc.joblib")
 forecast = model.get_forecast(steps=5)
 print(forecast.predicted_mean)
 print(forecast.conf_int())
@@ -236,8 +236,8 @@ pipeline/model_training.ipynb  Cleaning, visuals, training, validation, serializ
 docs/                          Planning notes and README figures
 docs/figures/                  Exploration, ACF/PACF, validation, and forecast plots
 pyproject.toml                 Project metadata and dependencies
-data/btc-time-series-data.csv  Daily BTC series used for training
-prod_model/arima_btc.joblib    Serialized full-series ARIMA estimator
+data/                          Local daily BTC CSV (gitignored)
+models/arima_btc.joblib        Local serialized ARIMA estimator (gitignored)
 ```
 
 ## Contributing
