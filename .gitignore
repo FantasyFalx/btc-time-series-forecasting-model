@@ -1,0 +1,8 @@
+.cursor/
+.venv/
+data/
+models/
+uv.lock
+__pycache__/
+tests/
+build/
