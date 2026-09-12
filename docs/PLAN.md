@@ -28,10 +28,9 @@
         - Create a prompt md file that directs agent to serialize the model 
         and prep it for deployment. (Done) 
     7.3: Run a test forecast of the serialized model. (Done) 
-    7.4: Deploy the model. ()
+    7.4: Deploy the model. (IP)
 ## Remove this item. 
-9. Create comprehensive documentation (README), and publish the project to GitHub, Discord channels, and LinkedIn for public showcasing.
-10. Prepare and distribute the model for public download.
+9. Create comprehensive documentation (README), and publish the project to GitHub, Discord channels, and LinkedIn for public showcasing. (IP)
 
 ## Output: 
 - A time series model trained to forecast Bitcoin price data.
