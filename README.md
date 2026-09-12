@@ -119,7 +119,7 @@ The fitted full-series model is serialized to `models/arima_btc.joblib`.
 
 ## Production Model
 
-The trained estimator lives in a local `models/` directory (gitignored, same as `data/`):
+The trained estimator ships in `models/`:
 
 ```text
 models/
@@ -128,12 +128,12 @@ models/
 
 | Item | Value |
 | --- | --- |
-| Path | `models/arima_btc.joblib` |
+| Path | [`models/arima_btc.joblib`](models/arima_btc.joblib) |
 | Format | joblib dump of a statsmodels ARIMA results object |
 | Order | `(1, 0, 1)` on first-differenced daily close, then refit on the full 365-day window |
 | Loader | `src/main.py` |
 
-Train with `pipeline/model_training.ipynb` to write this file, then load it with `python src/main.py` or `joblib.load("models/arima_btc.joblib")`. Re-running the notebook overwrites it.
+After cloning, load it with `python src/main.py` or `joblib.load("models/arima_btc.joblib")`. Re-running `pipeline/model_training.ipynb` overwrites this file.
 
 ## Visuals
 
@@ -204,11 +204,11 @@ It must include `event_date` and `close_price_usd`. `market_cap_usd` and `volume
 jupyter lab pipeline/model_training.ipynb
 ```
 
-Run all cells. The notebook cleans the series, plots exploration and ACF/PACF charts, fits ARIMA, scores the 5-day backtest, refits on the full window, and writes `models/arima_btc.joblib` (that directory is also gitignored).
+Run all cells. The notebook cleans the series, plots exploration and ACF/PACF charts, fits ARIMA, scores the 5-day backtest, refits on the full window, and writes `models/arima_btc.joblib`.
 
 ## Usage
 
-After you have trained and produced `models/arima_btc.joblib`:
+The serialized model is already in `models/`. After installing dependencies:
 
 ```bash
 python src/main.py
@@ -237,7 +237,7 @@ docs/                          Planning notes and README figures
 docs/figures/                  Exploration, ACF/PACF, validation, and forecast plots
 pyproject.toml                 Project metadata and dependencies
 data/                          Local daily BTC CSV (gitignored)
-models/arima_btc.joblib        Local serialized ARIMA estimator (gitignored)
+models/arima_btc.joblib        Serialized full-series ARIMA estimator
 ```
 
 ## Contributing
